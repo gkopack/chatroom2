@@ -1,0 +1,22 @@
+{
+  "name": "Django Chatroom App",
+  "description": "App to implement a chatbot through heroku using django-channels.",
+  "image": "heroku/python",
+  "repository": "https://github.com/gkopack/chatroom2",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
